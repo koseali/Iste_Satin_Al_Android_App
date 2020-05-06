@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_log"
+    tools:context=".Register"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                app:srcCompat="@drawable/log_back_left"
+                android:onClick="Back"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+
+                app:srcCompat="@drawable/siyah_log" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginBottom="20sp"
+                android:text="İlan ver!  İhale ile en iyi teklif senin olsun."
+                android:textAlignment="center"
+                android:textColor="@color/renkyazi"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+            <EditText
+                android:id="@+id/etname"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="20sp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableLeft="@drawable/person_logo"
+                android:ems="10"
+                android:hint="Adınızı giriniz"
+                android:inputType="textPersonName"
+                android:textAlignment="textStart"
+
+                android:textColorHint="#8F000000" />
+
+            <EditText
+                android:layout_marginTop="20sp"
+                android:id="@+id/etsurname"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableLeft="@drawable/person_logo"
+                android:ems="10"
+                android:hint="Soyadınızı giriniz"
+                android:inputType="textPersonName"
+                android:textAlignment="textStart"
+
+                android:textColorHint="#8F000000" />
+
+
+            <EditText
+                android:id="@+id/etemail"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableStart="@drawable/person_logo"
+                android:ems="10"
+                android:hint="Mail Adresi"
+                android:inputType="textEmailAddress"
+                android:textAlignment="textStart"
+                android:textColorHint="#8F000000" />
+            <EditText
+                android:id="@+id/etnickname"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableLeft="@drawable/person_logo"
+                android:ems="10"
+                android:hint="Kullanıcı  Adı"
+                android:inputType="textPersonName"
+                android:textAlignment="textStart"
+                android:textColorHint="#8F000000" />
+
+            <EditText
+                android:id="@+id/etpass"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableLeft="@drawable/lock_logo"
+                android:ems="10"
+                android:hint="Parola "
+                android:inputType="textPassword"
+                android:textAlignment="textStart"
+                android:textColorHint="#8F000000" />
+
+            <EditText
+                android:id="@+id/etpass2"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableLeft="@drawable/lock_logo"
+                android:ems="10"
+                android:hint="Parolayı Tekrar giriniz."
+                android:inputType="textPassword"
+                android:textAlignment="textStart"
+                android:textColorHint="#8F000000" />
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/etphonee"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="56dp"
+                android:background="@drawable/et_bg"
+                android:drawableStart="@drawable/phone_logo"
+                android:hint="Cep Telefonu"
+                android:inputType="phone"
+                android:textColorHint="#8F000000"
+                app:met_mask="+90(###) ### ## ##" />
+
+
+            <EditText
+                android:id="@+id/etFirma"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableLeft="@drawable/logo_company"
+                android:ems="10"
+                android:hint="Firma Adi"
+                android:inputType="textEmailAddress"
+                android:textAlignment="textStart"
+
+                android:textColorHint="#8F000000" />
+            <EditText
+                android:id="@+id/etFirmaTipi"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableLeft="@drawable/logo_company"
+                android:ems="10"
+                android:hint="Firma Tipi"
+                android:inputType="textPersonName"
+                android:textAlignment="textStart"
+                android:textColorHint="#8F000000" />
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/etFirmaTel"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableLeft="@drawable/logo_company"
+                android:ems="10"
+                android:hint="Firma Telefonu"
+                android:inputType="phone"
+                android:textAlignment="textStart"
+                app:met_mask="+0(###) ### ## ##"
+                android:textColorHint="#8F000000" />
+
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/etVergiNumarasi"
+                android:layout_width="300sp"
+                android:layout_height="62sp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="56dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:drawableLeft="@drawable/logo_company"
+                android:ems="10"
+                android:hint="Vergi Numarası"
+                android:inputType="phone"
+                android:textAlignment="textStart"
+                android:textColorHint="#8F000000"
+                app:met_mask="### ### ## ##" />
+
+
+            <Button
+                android:layout_width="320sp"
+                android:layout_height="50sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10sp"
+                android:background="@drawable/rounded_button"
+                android:onClick="Register"
+                android:text="Kayıt Ol"
+                android:textAlignment="center"
+                android:textColor="@color/WhiteColor"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Switch" />
+</LinearLayout>

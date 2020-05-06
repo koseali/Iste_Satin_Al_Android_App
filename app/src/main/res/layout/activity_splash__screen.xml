@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/arkaplan"
+
     tools:context=".Splash_Screen">
 
 
@@ -15,7 +16,22 @@
         android:layout_marginTop="16dp"
         android:foregroundGravity="center_vertical|clip_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logosiyah" />
+        app:srcCompat="@drawable/mavilogo" />
+
+    <TextView
+        android:id="@+id/txtgiris"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Firmaların Kazanma Noktası"
+        android:textColor="@color/WhiteColor"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/imglogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67" />
 </androidx.constraintlayout.widget.ConstraintLayout>
