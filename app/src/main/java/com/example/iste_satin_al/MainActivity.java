@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,result,Toast.LENGTH_LONG).show();
 
             if(result.contains("Basarili")){
-                Intent intent = new Intent(this,HomeActivity.class);
+                Intent intent = new Intent(this,main_menu.class);
 
 
                 if(checkHatirla.isChecked()){  Remember remember = new Remember(this);
