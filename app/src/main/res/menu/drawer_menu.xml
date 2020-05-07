@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_anasayfa"
+            android:icon="@drawable/ic_home"
+            android:title="Ana Sayfa" />
+
+        <item
+            android:id="@+id/nav_firma_profil"
+            android:icon="@drawable/ic_company"
+            android:title="Firma Profili" />
+
+
+        <item
+            android:id="@+id/nav_firma_ilan"
+            android:icon="@drawable/ic_company"
+            android:title="Firma İlanları" />
+
+
+        <item
+            android:id="@+id/nav_ilan_olustur"
+            android:icon="@drawable/ic_company"
+            android:title="İlan Olustur" />
+        <item
+            android:id="@+id/nav_tum_ilanlar"
+            android:icon="@drawable/ic_bookmark"
+            android:title="Tüm İlanlar" />
+
+    </group>
+    <item android:title="İletişim">
+        <menu>
+            <item
+                android:id="@+id/nav_web"
+                android:icon="@drawable/ic_web"
+                android:title="Web Sitesine git" />
+
+        </menu>
+
+    </item>
+
+</menu>

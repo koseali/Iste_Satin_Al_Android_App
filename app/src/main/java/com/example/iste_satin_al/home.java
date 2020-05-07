@@ -1,0 +1,82 @@
+package com.example.iste_satin_al;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.MenuItem;
+
+import com.google.android.material.navigation.NavigationView;
+
+public class home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+    private DrawerLayout drawer;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        if(savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AnaSayfaFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_anasayfa);
+        }
+
+
+    }
+    @Override
+    public void onBackPressed() {
+        if(drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        }else{
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+
+            case R.id.nav_anasayfa:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AnaSayfaFragment()).commit();
+                break;
+
+            case R.id.nav_firma_profil:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirmaProfilFragment()).commit();
+                break;
+            case R.id.nav_firma_ilan:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirmaIlanFragment()).commit();
+                break;
+            case R.id.nav_tum_ilanlar:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TumIlanFragment()).commit();
+                break;
+
+            case R.id.nav_ilan_olustur:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new IlanOlusturFragment()).commit();
+                break;
+
+            case R.id.nav_web:
+                Uri uri = Uri.parse("https://istesatinal.com");
+                Intent i = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(i);
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+}
