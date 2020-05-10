@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.iste_satin_al.Models.Firma;
+
 public class MainActivity extends AppCompatActivity {
     EditText etnickname,etpass;
     CheckBox checkHatirla ;
@@ -43,7 +45,13 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,result,Toast.LENGTH_LONG).show();
 
             if(result.contains("Basarili")){
+
+                Firma gelenFirma = new Firma();
+
+                gelenFirma = helper.getFirma(nickname,password);
+
                Intent intent = new Intent(this, home.class);
+               intent.putExtra("gelenFirma",gelenFirma);
 
 
                 if(checkHatirla.isChecked()){  Remember remember = new Remember(this);

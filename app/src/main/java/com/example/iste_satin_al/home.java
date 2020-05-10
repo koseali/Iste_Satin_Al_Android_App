@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.iste_satin_al.Models.Firma;
 import com.google.android.material.navigation.NavigationView;
 
 public class home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
@@ -23,6 +24,9 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        final Firma gelenFirma = (Firma) getIntent().getSerializableExtra("gelenFirma");
+        // ana sayfada bir şey ne yapacaz
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -49,6 +53,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        final Firma gelenFirma = (Firma) getIntent().getSerializableExtra("gelenFirma");
         switch (item.getItemId()){
 
             case R.id.nav_anasayfa:
@@ -56,7 +61,12 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
                 break;
 
             case R.id.nav_firma_profil:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirmaProfilFragment()).commit();
+               // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirmaProfilFragment()).commit();
+
+               Intent intent = new Intent(this,FirmaProfil.class);
+               intent.putExtra("gelenFirma",gelenFirma);;
+               startActivity(intent);
+
                 break;
             case R.id.nav_firma_ilan:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirmaIlanFragment()).commit();
