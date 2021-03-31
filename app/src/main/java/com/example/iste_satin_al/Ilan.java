@@ -1,6 +1,8 @@
-package com.example.iste_satin_al.Models;
+package com.example.iste_satin_al;
 
-public class Ilan {
+import java.io.Serializable;
+
+public class Ilan implements Serializable {
     int id;
     String baslik;
     String sehir;

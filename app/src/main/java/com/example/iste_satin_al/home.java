@@ -17,6 +17,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
     private DrawerLayout drawer;
+    String poster_username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +55,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         final Firma gelenFirma = (Firma) getIntent().getSerializableExtra("gelenFirma");
+        poster_username = gelenFirma.getCompanyMembersNickname();
         switch (item.getItemId()){
 
             case R.id.nav_anasayfa:
@@ -69,14 +71,29 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
                 break;
             case R.id.nav_firma_ilan:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirmaIlanFragment()).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirmaIlanFragment()).commit();
+                Intent intentt=new Intent(this,ilanlar.class);
+                intentt.putExtra("hepsiMi", false);
+                intentt.putExtra("username", poster_username);
+                startActivity(intentt);
                 break;
             case R.id.nav_tum_ilanlar:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TumIlanFragment()).commit();
+                Intent intennt=new Intent(this,ilanlar.class);
+                intennt.putExtra("hepsiMi", true);
+                intennt.putExtra("username", poster_username);
+                startActivity(intennt);
+
+                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TumIlanFragment()).commit();
                 break;
 
             case R.id.nav_ilan_olustur:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new IlanOlusturFragment()).commit();
+               // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new IlanOlusturFragment()).commit();
+
+                //Firma ile alakalı bilgi çekersek kullanıırız
+                Intent in = new Intent(this,IlanOlusturActivity.class);
+                in.putExtra("gelenFirma",gelenFirma);;
+
+                startActivity(in);
                 break;
 
             case R.id.nav_web:
